@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbal & Medicinal Plants</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Global Navbar (shared) -->
+    <header>
+      <nav class="site-nav">
+        <h1>🌿 Herbalism</h1>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#plants-category">Plants-Category</a></li>
+          <li><a href="#content">Content</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home / Hero -->
+    <section id="home" class="home-section">
+      <div class="home-container">
+        <div class="home-parent">
+          <div class="main_content">
+            <div class="left">
+              <h3>Herbal</h3>
+              <h1>
+                Medicinal & <br />
+                Ayurvedic
+              </h1>
+              <h2>Plants</h2>
+              <p>
+                Herbal and medicinal plants have been valued for centuries as
+                natural sources of healing, wellness, and nourishment.
+              </p>
+              <button>READ MORE</button>
+            </div>
+            <div class="right">
+              <img src="/Images/2413768_13976.svg" alt="Herbal Plant" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="about-section">
+        <!-- Left image -->
+        <img src="/Images/Natural benefits.jpeg" alt="Herbal Plants" />
+        <!-- Right content -->
+        <div class="about-content">
+          <h2>🌳 The Healing Power of Nature</h2>
+          <h3>About Herbal &amp; Medicinal Plants</h3>
+          <p>
+            For centuries, humans have relied on herbal and medicinal plants as
+            natural remedies to promote health and well-being. These plants are
+            a treasure trove of healing compounds that help prevent diseases,
+            boost immunity, and restore balance to the body and mind.
+          </p>
+          <p>
+            In traditional systems like
+            <b>Ayurveda, Siddha, Unani, and Chinese Medicine</b>, plants such as
+            Tulsi, Neem, Aloe Vera, and Ashwagandha hold a sacred and medicinal
+            value. Today, modern research continues to validate their immense
+            potential in holistic healthcare.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-section">
+        <h1>Why Choose Herbal Remedies?</h1>
+        <div class="why-list">
+          <div class="why-card">
+            🌱 <b>Natural & Safe:</b> Free from harmful chemicals, with minimal
+            side effects.
+          </div>
+          <div class="why-card">
+            🌳 <b>Sustainable:</b> Environment-friendly and renewable sources of
+            healing.
+          </div>
+          <div class="why-card">
+            💚 <b>Holistic Benefits:</b> Support physical, mental, and spiritual
+            well-being.
+          </div>
+          <div class="why-card">
+            🩺 <b>Backed by Tradition:</b> Trusted for generations across
+            cultures worldwide.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plants-Category (FULL gallery merged from category.html) -->
+    <section id="plants-category" class="category">
+      <h1 class="section-title">Famous Herbal &amp; Medicinal Plants</h1>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search plants by name, scientific name, or family."
+        />
+      </div>
+
+      <main class="plant-grid" id="plantContainer"></main>
+
+      <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal" id="plantModal">
+        <div class="modal-content" id="modalContent">
+          <span class="close-btn" id="closeModal">&times;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section id="content" class="content">
+      <div class="vision">
+        <h1>Our Vision</h1>
+        <!-- Vision -->
+         <img src="/Images/Vision.png" alt="Our Vision">
+        <p>
+          Our mission is to spread awareness about the importance of herbal and
+          medicinal plants in everyday life. By integrating ancient wisdom with
+          modern science, we aim to inspire people to adopt a healthier,
+          greener, and more sustainable lifestyle.
+        </p>
+      </div>
+
+      <div class="cta">
+        <h1>Discover. Learn. Heal.</h1>
+        <p>
+          Explore our collection of herbal plants, learn about their uses, and
+          integrate them into your life.
+        </p>
+        <button>
+          <a
+            href="#plants-category"
+            style="text-decoration: none; color: #009879"
+            >Explore Plants</a
+          >
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; All Rights Reserved - Arvind Kumar Sharma</p>
+    </footer>
+
+    <!-- Gallery Script (merged from category.html) -->
+    <script>
+      const plants = [
+        {
+          name: "Tulsi",
+          scientificName: "Ocimum tenuiflorum",
+          family: "Lamiaceae",
+          image: "./Images/Tulsi plant.jpeg",
+          category: "Immunity",
+          description:
+            "Holy Basil used in Ayurveda for immunity, cold, and cough.",
+        },
+        {
+          name: "Aloe Vera",
+          scientificName: "Aloe barbadensis miller",
+          family: "Asphodelaceae",
+          image: "./Images/Aloe Vera.jpg",
+          category: "Skincare",
+          description: "Used for burns, acne, dry skin, and moisturizing.",
+        },
+        {
+          name: "Neem",
+          scientificName: "Azadirachta indica",
+          family: "Meliaceae",
+          image: "./Images/Neem.jpeg",
+          category: "Antibacterial",
+          description:
+            "Antibacterial and anti-fungal, used in skin care and traditional medicine.",
+        },
+        {
+          name: "Mint",
+          scientificName: "Mentha",
+          family: "Lamiaceae",
+          image: "./Images/Mint.jpeg",
+          category: "Digestive",
+          description:
+            "Used to ease digestion, relieve stomach pain, and add freshness.",
+        },
+        {
+          name: "Ashwagandha",
+          scientificName: "Withania somnifera",
+          family: "Solanaceae",
+          image: "./Images/ashwagandha.jpg",
+          category: "Energy",
+          description:
+            "Adaptogen to reduce stress and improve focus and energy.",
+        },
+        {
+          name: "Brahmi",
+          scientificName: "Bacopa monnieri",
+          family: "Plantaginaceae",
+          image: "./Images/Brahmi.jpg",
+          category: "Brain Tonic",
+          description:
+            "Improves memory, reduces anxiety, supports cognitive function.",
+        },
+        {
+          name: "Giloy",
+          scientificName: "Tinospora cordifolia",
+          family: "Menispermaceae",
+          image: "./Images/Giloy.jpg",
+          category: "Detox",
+          description: "Boosts immunity and purifies blood.",
+        },
+        {
+          name: "Lemongrass",
+          scientificName: "Cymbopogan flexuosus",
+          family: "Poaceae",
+          image: "./Images/Lemon-Grass.jpg",
+          category: "Anti-inflammatory",
+          description: "Used in teas and oils for relaxation and pain relief.",
+        },
+        {
+          name: "Horse Chestnut",
+          scientificName: "Aesculus Hippocastanum",
+          family: "Sapindaceae",
+          image: "./Images/AESCULUS HIPPOCASTANUM.jpeg",
+          category: "Anti-inflammatory",
+          description:
+            "Used in treating joint pain, bladder and gastrointestinal problems, fever, leg cramps, and other conditions.",
+        },
+        {
+          name: "Turmeric",
+          scientificName: "Curcuma",
+          family: "Zingiberaceae",
+          image: "./Images/Turmeric.jpeg",
+          category: "Antioxidant",
+          description:
+            "Aid digestion and liver function, relieve arthritis pain, and regulate menstruation.",
+        },
+        {
+          name: "Clove",
+          scientificName: "Syzygium aromaticum",
+          family: "Myrtaceae",
+          image: "./Images/Clove.jpg",
+          category: "Anti-inflammatory",
+          description:
+            "Used for upset stomach and as an expectorant, the oil is used topically to treat toothache.",
+        },
+        {
+          name: "Ginger",
+          scientificName: "Zingiber officinale",
+          family: "Zingiberaceae",
+          image: "./Images/Ginger.jpg",
+          category: "Digestive",
+          description:
+            "Used to treat nausea, indigestion, and inflammation.",
+        },
+        {
+          name: "Amla",
+          scientificName: "Phyllanthus emblica",
+          family: "Euphorbiaceae",
+          image: "./Images/Amla.jpg",
+          category: "Antioxidant",
+          description:
+            "Rich in vitamin C, used for skin health and boosting immunity.",
+        }
+      ];
+
+      const container = document.getElementById("plantContainer");
+      const searchInput = document.getElementById("searchInput");
+      const modal = document.getElementById("plantModal");
+      const modalContent = document.getElementById("modalContent");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+      let visibleCount = 0;
+      const batchSize = 4;
+
+      function renderPlants(filter = "") {
+        container.innerHTML = "";
+        visibleCount = 0;
+        loadMorePlants(filter);
+      }
+
+      function loadMorePlants(filter = "") {
+        const filteredPlants = plants.filter(
+          (p) =>
+            p.name.toLowerCase().includes(filter.toLowerCase()) ||
+            p.scientificName.toLowerCase().includes(filter.toLowerCase()) ||
+            p.family.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        const nextBatch = filteredPlants.slice(
+          visibleCount,
+          visibleCount + batchSize
+        );
+        nextBatch.forEach((plant) => {
+          const card = document.createElement("div");
+          card.className = "plant-card";
+          card.innerHTML = `
+          <img src="${plant.image}" alt="${plant.name}" />
+          <div class="plant-info">
+            <span class="category">${plant.category}</span>
+            <h3>${plant.name}</h3>
+            <p><em><strong>Scientific:</strong> ${plant.scientificName}</em></p>
+            <p><em><strong>Family:</strong> ${plant.family}</em></p>
+            <p>${plant.description.slice(0, 60)}.</p>
+          </div>
+        `;
+          card.addEventListener("click", () => openModal(plant));
+          container.appendChild(card);
+        });
+        visibleCount += batchSize;
+
+        loadMoreBtn.style.display =
+          visibleCount >= filteredPlants.length ? "none" : "block";
+      }
+
+      function openModal(plant) {
+        modalContent.innerHTML = `
+        <span class="close-btn" id="closeModal">&times;</span>
+        <img src="${plant.image}" alt="${plant.name}" />
+        <h2>${plant.name}</h2>
+        <p><strong>Scientific Name:</strong> ${plant.scientificName}</p>
+        <p><strong>Family:</strong> ${plant.family}</p>
+        <p><strong>Category:</strong> ${plant.category}</p>
+        <p>${plant.description}</p>
+      `;
+        modal.style.display = "flex";
+        document.getElementById("closeModal").onclick = () =>
+          (modal.style.display = "none");
+      }
+
+      searchInput.addEventListener("input", (e) => {
+        renderPlants(e.target.value);
+      });
+
+      loadMoreBtn.addEventListener("click", () => {
+        loadMorePlants(searchInput.value);
+      });
+
+      window.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      };
+
+      // initial render
+      renderPlants();
+    </script>
+  </body>
+</html>
